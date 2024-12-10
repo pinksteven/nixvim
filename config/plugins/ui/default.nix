@@ -4,7 +4,7 @@
     ./neo-tree.nix
     ./yazi.nix
     ./noice.nix
-    ./barbar.nix
+    ./bufferline.nix
     ./toggleterm.nix
     ./notify.nix
     ./whichkey.nix

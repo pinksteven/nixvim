@@ -62,7 +62,11 @@
     }
 
     {
-      mode = "n";
+      mode = [
+        "n"
+        "v"
+        "i"
+      ];
       key = "<C-s>";
       action = "<cmd>w<cr><esc>";
       options = {
