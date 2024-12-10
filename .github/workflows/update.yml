@@ -16,7 +16,7 @@ jobs:
         uses: DeterminateSystems/update-flake-lock@v24
         with:
           token: ${{ secrets.GH_TOKEN_FOR_UPDATES }}
-      - name: Enable Pull Request Automerge
-        run: gh pr merge --merge --auto ${{ github.event.pull_request.number }}
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN_FOR_UPDATES }}
+      - uses: peter-evans/enable-pull-request-automerge@v3
+        with:
+          pull-request-number: ${{ github.event.pull_request.number }}
+          merge-method: squash
