@@ -69,6 +69,8 @@
 
       scrolloff = 8; # Will never have less than 8 characters as you scroll down
       mouse = "a"; # Mouse
+      mousemoveevent = true;
+      mousefocus = true;
 
       # Set encoding type
       encoding = "utf-8";
