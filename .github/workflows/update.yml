@@ -36,6 +36,6 @@ jobs:
           retry_on: error
           timeout_seconds: 10
           command: |
-            gh pr merge --squash --admin "${{ github.event.pull_request.number }}"
+            gh pr merge --squash --admin "${{ env.PULL_REQUEST_NUMBER }}"
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN_FOR_UPDATES }}
