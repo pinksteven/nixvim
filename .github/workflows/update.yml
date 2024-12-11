@@ -2,19 +2,32 @@ name: update-flake-lock
 on:
   workflow_dispatch: # allows manual triggering
   schedule:
-    - cron: "0 0 */7 * *" # run weekly
+    - cron: "0 0 */7 * *" # runs every week
 
 jobs:
   lockfile:
+    name: Update the flake inputs
     runs-on: ubuntu-latest
+    timeout-minutes: 40
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_TOKEN_FOR_UPDATES }}
+
       - name: Install Nix
-        uses: DeterminateSystems/nix-installer-action@v1
+        uses: cachix/install-nix-action@v20
+        with:
+          nix_path: nixpkgs=channel:nixos-unstable
+
       - name: Update flake.lock
+        id: update
         uses: DeterminateSystems/update-flake-lock@v24
         with:
+          pr-title: "Update flake.lock"
+          pr-labels: | # Labels to be set on the PR
+            dependencies
+            automated
           token: ${{ secrets.GH_TOKEN_FOR_UPDATES }}
       - uses: peter-evans/enable-pull-request-automerge@v3
         with:
