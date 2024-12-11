@@ -29,7 +29,13 @@ jobs:
             dependencies
             automated
           token: ${{ secrets.GH_TOKEN_FOR_UPDATES }}
-      - uses: peter-evans/enable-pull-request-automerge@v3
+      - name: Auto merge commit
+        uses: nick-fields/retry@v3.0.0
         with:
-          pull-request-number: ${{ github.event.pull_request.number }}
-          merge-method: squash
+          max_attemps: 3
+          retry_on: error
+          timeout_seconds: 10
+          command: |
+            gh pr merge --merge --auto ${{ github.event.pull_request.number }}
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN_FOR_UPDATES }}
