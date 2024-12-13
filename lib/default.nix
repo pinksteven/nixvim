@@ -28,4 +28,6 @@
       signColumn = false;
     };
   };
+
+  flake = "";
 }

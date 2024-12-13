@@ -4,6 +4,7 @@
     ./debug
     ./editor
     ./git
+    ./lang
     ./lsp
     ./telescope
     ./theme
