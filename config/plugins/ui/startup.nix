@@ -3,6 +3,8 @@
   plugins.startup = {
     enable = true;
 
+    colors.background = colors.base00;
+
     sections = {
       header = {
         type = "text";
