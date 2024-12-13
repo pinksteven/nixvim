@@ -77,7 +77,6 @@
               end
             '';
             icon = icons.ui.Settings;
-            color.fg = colors.base05;
           }
           "encoding"
           "fileformat"
