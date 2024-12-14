@@ -19,12 +19,19 @@
         };
       };
     };
+    which-key.settings.spec = [
+      {
+        __unkeyed-1 = "<leader>Cc";
+        mode = "n";
+        group = "+codeium";
+      }
+    ];
   };
 
   keymaps = [
     {
       mode = "n";
-      key = "<leader>ac";
+      key = "<C-C>";
       action = "<cmd>Codeium Chat<CR>";
       options = {
         desc = "Codeium Chat";

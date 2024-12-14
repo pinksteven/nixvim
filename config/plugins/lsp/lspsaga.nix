@@ -86,7 +86,7 @@
     }
     {
       mode = "n";
-      key = "<leader>lo";
+      key = "<leader>co";
       action = "<cmd>Lspsaga outline<CR>";
       options = {
         desc = "Outline";
@@ -95,7 +95,7 @@
     }
     {
       mode = "n";
-      key = "<leader>lr";
+      key = "<leader>cr";
       action = "<cmd>Lspsaga rename<CR>";
       options = {
         desc = "Rename";

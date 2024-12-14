@@ -25,9 +25,14 @@
           group = "+code";
         }
         {
+          __unkeyed-1 = "<leader>b";
+          mode = "n";
+          group = "+buffers";
+        }
+        {
           __unkeyed-1 = "<leader>f";
           mode = "n";
-          group = "+find/file";
+          group = "+telescope";
         }
 
         {
@@ -43,12 +48,6 @@
           __unkeyed-1 = "<leader>q";
           mode = "n";
           group = "+quit/session";
-        }
-
-        {
-          __unkeyed-1 = "<leader>s";
-          mode = "n";
-          group = "+search";
         }
 
         {

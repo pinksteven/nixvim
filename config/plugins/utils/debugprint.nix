@@ -31,4 +31,14 @@
       };
     };
   };
+  plugins.which-key.settings.spec = [
+    {
+      __unkeyed-1 = "<leader>p";
+      mode = [
+        "n"
+        "v"
+      ];
+      group = "+debug-print";
+    }
+  ];
 }

@@ -55,35 +55,27 @@
         ];
       };
       keymaps = {
-        "<leader>fp" = {
-          action = "projects";
-          options.desc = "Search Todo";
-        };
-        "<leader>st" = {
+        "<leader>ft" = {
           action = "todo-comments";
           options.desc = "Search Todo";
         };
-        "<leader>sn" = {
+        "<leader>fn" = {
           action = "notify";
           options.desc = "Search Notifications";
         };
-        "<leader>su" = {
+        "<leader>fu" = {
           action = "undo";
           options.desc = "Search Undo";
-        };
-        "<leader><space>" = {
-          action = "find_files";
-          options.desc = "Find project files";
         };
         "<leader>ff" = {
           action = "find_files hidden=true";
           options.desc = "Find project files";
         };
-        "<leader>/" = {
+        "<leader>f/" = {
           action = "live_grep";
           options.desc = "Grep (root dir)";
         };
-        "<leader>:" = {
+        "<leader>f:" = {
           action = "command_history";
           options.desc = "Command History";
         };
@@ -103,41 +95,37 @@
           action = "git_commits";
           options.desc = "commits";
         };
-        "<leader>sa" = {
+        "<leader>fa" = {
           action = "autocommands";
           options.desc = "Auto Commands";
         };
-        "<leader>sc" = {
+        "<leader>fc" = {
           action = "commands";
           options.desc = "Commands";
         };
-        "<leader>sd" = {
+        "<leader>fd" = {
           action = "diagnostics bufnr=0";
           options.desc = "Workspace diagnostics";
         };
-        "<leader>sh" = {
+        "<leader>fh" = {
           action = "help_tags";
           options.desc = "Help pages";
         };
-        "<leader>sk" = {
+        "<leader>fk" = {
           action = "keymaps";
           options.desc = "Key maps";
         };
-        "<leader>sM" = {
+        "<leader>fM" = {
           action = "man_pages";
           options.desc = "Man pages";
         };
-        "<leader>sm" = {
+        "<leader>fm" = {
           action = "marks";
           options.desc = "Jump to Mark";
         };
-        "<leader>so" = {
+        "<leader>fo" = {
           action = "vim_options";
           options.desc = "Options";
-        };
-        "<leader>uC" = {
-          action = "colorscheme";
-          options.desc = "Colorscheme preview";
         };
       };
     };

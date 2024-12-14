@@ -18,7 +18,7 @@
 
       # Enable relative line numbers
       number = true;
-      relativenumber = true;
+      relativenumber = false; # I hate it no thanks
 
       # Tab spacing 2 spaces
       tabstop = 2;

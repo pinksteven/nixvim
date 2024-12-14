@@ -5,14 +5,14 @@
     settings = {
       direction = "float";
       start_in_insert = true;
-      open_mapping = "[[<C-/>]]";
+      open_mapping = "[[<C-q>]]";
     };
   };
 
   keymaps = [
     {
       mode = "n";
-      key = "<leader>tt";
+      key = "<leader>ut";
       action = "<cmd>ToggleTerm<CR>";
       options = {
         desc = "Open Terminal";
