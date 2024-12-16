@@ -1,7 +1,7 @@
 {
   plugins = {
-    nvim-colorizer = {
-      enable = false;
+    colorizer = {
+      enable = true;
     };
   };
 

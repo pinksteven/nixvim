@@ -23,10 +23,11 @@
     base0D = "#c4a7e7";
     base0E = "#f6c177";
     base0F = "#524f67";
-    transparency = {
-      main = false;
-      signColumn = false;
-    };
+  };
+
+  transparency = {
+    main = false;
+    signColumn = false;
   };
 
   flake = "";

@@ -1,4 +1,7 @@
-{ pkgs, flake, ... }:
+{ pkgs, config, ... }:
+let
+  flake = config.flake;
+in
 {
   plugins = {
     nix.enable = true;
