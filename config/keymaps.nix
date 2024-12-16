@@ -43,7 +43,7 @@
 
     {
       mode = "n";
-      key = "<leader>-";
+      key = "<leader>w-";
       action = "<C-W>s";
       options = {
         silent = true;
@@ -53,7 +53,7 @@
 
     {
       mode = "n";
-      key = "<leader>|";
+      key = "<leader>w|";
       action = "<C-W>v";
       options = {
         silent = true;
