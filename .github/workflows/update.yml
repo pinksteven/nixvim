@@ -2,21 +2,37 @@ name: update-flake-lock
 on:
   workflow_dispatch: # allows manual triggering
   schedule:
-    - cron: "0 0 */7 * *" # run weekly
-
+    - cron: "0 0 */7 * *" # runs every week
 jobs:
   lockfile:
+    name: Update the flake inputs
     runs-on: ubuntu-latest
+    timeout-minutes: 40
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Install Nix
-        uses: DeterminateSystems/nix-installer-action@v1
-      - name: Update flake.lock
-        uses: DeterminateSystems/update-flake-lock@v24
         with:
           token: ${{ secrets.GH_TOKEN_FOR_UPDATES }}
-      - uses: peter-evans/enable-pull-request-automerge@v3
+      - name: Install Nix
+        uses: cachix/install-nix-action@v20
         with:
-          pull-request-number: ${{ github.event.pull_request.number }}
-          merge-method: squash
+          nix_path: nixpkgs=channel:nixos-unstable
+      - name: Update flake.lock
+        id: update
+        uses: DeterminateSystems/update-flake-lock@v24
+        with:
+          pr-title: "Update flake.lock"
+          pr-labels: | # Labels to be set on the PR
+            dependencies
+            automated
+          token: ${{ secrets.GH_TOKEN_FOR_UPDATES }}
+      - name: Auto merge commit
+        uses: nick-fields/retry@v3.0.0
+        with:
+          max_attemps: 3
+          retry_on: error
+          timeout_seconds: 10
+          command: |
+            gh pr merge --squash --admin "${{ env.PULL_REQUEST_NUMBER }}"
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN_FOR_UPDATES }}
