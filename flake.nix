@@ -10,6 +10,10 @@
       url = "github:NormalNvim/NormalSnippets";
       flake = false;
     };
+    yuck_vim = {
+      url = "github:elkowar/yuck.vim";
+      flake = false;
+    };
   };
 
   outputs =

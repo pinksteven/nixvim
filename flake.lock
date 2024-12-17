@@ -314,7 +314,8 @@
         "flake-utils": "flake-utils",
         "nixpkgs": "nixpkgs",
         "nixvim": "nixvim",
-        "normal_snippets": "normal_snippets"
+        "normal_snippets": "normal_snippets",
+        "yuck_vim": "yuck_vim"
       }
     },
     "systems": {
@@ -365,6 +366,22 @@
       "original": {
         "owner": "numtide",
         "repo": "treefmt-nix",
+        "type": "github"
+      }
+    },
+    "yuck_vim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1667045807,
+        "narHash": "sha256-F7aS8d6jJQQoIGkG2o4KNnDZAIrq0c+otIHvjdoGbtY=",
+        "owner": "elkowar",
+        "repo": "yuck.vim",
+        "rev": "9b5e0370f70cc30383e1dabd6c215475915fe5c3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "elkowar",
+        "repo": "yuck.vim",
         "type": "github"
       }
     }
