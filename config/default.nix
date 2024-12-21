@@ -6,6 +6,7 @@
     ./autocmd.nix
     ./keymaps.nix
     ./config.nix
+    ./lazy.nix
     ./plugins
   ];
 
