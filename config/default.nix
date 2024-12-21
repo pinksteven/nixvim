@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ lib, ... }:
 
 {
   imports = [
@@ -6,7 +6,6 @@
     ./autocmd.nix
     ./keymaps.nix
     ./config.nix
-    ./lazy.nix
     ./plugins
   ];
 
