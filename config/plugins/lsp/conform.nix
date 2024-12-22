@@ -3,9 +3,14 @@
   plugins.conform-nvim = {
     enable = true;
     settings = {
+      default_format_opts = {
+        timeout_ms = 3000;
+        quiet = false;
+        lsp_format = "fallback";
+      };
       format_on_save = {
         lspFallback = true;
-        timeoutMs = 500;
+        timeoutMs = 3000;
       };
       formatters_by_ft = {
         # Use the "_" filetype to run formatters on filetypes that don't have other formatters configured.
@@ -14,6 +19,8 @@
           "trim_whitespace"
           "trim_newlines"
         ];
+        "lua" = [ "stylua" ];
+        "sh" = [ "shfmt" ];
       };
       formatters = {
         _ = {

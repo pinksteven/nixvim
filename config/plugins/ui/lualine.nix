@@ -9,10 +9,13 @@
           "neo-tree"
           "toggleterm"
         ];
-        globalstatus = true; # have a single statusline at bottom of neovim instead of one for every window
+        globalstatus = true; # global status line instead of separate for every window
         disabled_filetypes.statusline = [
           "dashboard"
           "startup"
+          "alpha"
+          "ministarter"
+          "snacks_dashboard"
         ];
         section_separators = {
           left = "";
@@ -29,11 +32,12 @@
           {
             __unkeyed = "mode";
             separator.left = "";
-            padding.right = 2;
           }
         ];
         lualine_b = [
           "branch"
+        ];
+        lualine_c = [
           {
             __unkeyed = "filename";
             symbols = {
@@ -41,8 +45,6 @@
               readonly = icons.git.FileIgnored;
             };
           }
-        ];
-        lualine_c = [
           "diff"
         ];
 
@@ -90,7 +92,6 @@
           {
             __unkeyed = "location";
             separator.right = "";
-            padding.left = 2;
           }
         ];
       };
