@@ -2,9 +2,8 @@
   # Used as noice as a notification backend
   plugins.notify = {
     enable = true;
-    # remove animations for preformance
     stages = "slide";
-    timeout = 4000;
+    timeout = 3000;
   };
 
   keymaps = [

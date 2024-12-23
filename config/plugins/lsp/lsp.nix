@@ -6,7 +6,6 @@
       enable = true;
       servers.typos_lsp = {
         enable = true;
-        # extraOptions.diagnosticSeverity = "Hint"; # Doesn't work for reasons
       };
       keymaps.lspBuf = {
         "<c-k>" = "signature_help";

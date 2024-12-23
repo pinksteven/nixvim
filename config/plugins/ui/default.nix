@@ -10,10 +10,10 @@
     ./whichkey.nix
     ./undotree.nix
     ./startup.nix
+    ./snacks.nix
   ];
 
   plugins = {
-    neoscroll.enable = true;
     dressing.enable = true;
     todo-comments.enable = true;
     web-devicons.enable = true;

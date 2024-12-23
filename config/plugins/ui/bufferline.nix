@@ -70,6 +70,9 @@ in
           indicator_icon = null;
           indicator.style = "underline";
 
+          close_command = "function(n) Snacks.bufdelete(n) end";
+          right_mouse_command = "function(n) Snacks.bufdelete(n) end";
+
           hover = {
             enabled = true;
             delay = 0;
@@ -133,7 +136,7 @@ in
     {
       mode = "n";
       key = "<C-x>";
-      action = "<cmd>:bp | bd #<cr>";
+      action = "<cmd>lua Snacks.bufdelete()<cr>";
       options = {
         desc = "Delete buffer";
       };
