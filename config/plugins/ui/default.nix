@@ -5,7 +5,6 @@
     ./yazi.nix
     ./noice.nix
     ./bufferline.nix
-    ./toggleterm.nix
     ./notify.nix
     ./whichkey.nix
     ./undotree.nix

@@ -6,11 +6,14 @@
       settings = {
         bigfile.enabled = true;
         gitbrowse.enabled = true;
-        lazygit.enabled = true;
         scroll.enabled = true;
         scope.enabled = true;
         words.enabled = true;
         bufdelete.enabled = true;
+        lazygit = {
+          enabled = true;
+          win.border = "rounded";
+        };
       };
     };
   };

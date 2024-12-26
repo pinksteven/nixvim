@@ -1,4 +1,7 @@
+{ pkgs, ... }:
 {
+  extraPlugins = [ pkgs.vimPlugins.plenary-nvim ];
+
   imports = [
     ./codeium.nix
     ./debugprint.nix
@@ -7,7 +10,6 @@
     ./compiler.nix
     ./persistence.nix
     ./snacks.nix
-    ./ts-textobject.nix
     ./wakatime.nix
   ];
 }

@@ -1,8 +1,12 @@
 {
   plugins.snacks = {
     enable = true;
-    terminal = {
+    settings.terminal = {
       enabled = true;
+      win = {
+        position = "float";
+        border = "rounded";
+      };
     };
   };
 
@@ -11,10 +15,20 @@
       mode = [
         "n"
         "v"
-        "t"
       ];
       key = "<leader>tt";
-      action = "<CMD>lua Snacks.terminal.toggle(cmd)<cr>";
+      action = "<cmd>lua Snacks.terminal()<cr>";
+      options = {
+        desc = "Open terminal";
+      };
+    }
+    {
+      mode = "t";
+      key = "<C-q>";
+      action = "<cmd>lua Snacks.terminal()<cr>";
+      options = {
+        desc = "Open terminal";
+      };
     }
   ];
 }

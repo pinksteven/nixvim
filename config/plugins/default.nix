@@ -8,6 +8,7 @@
     ./lsp
     ./telescope
     ./theme
+    ./treesitter
     ./ui
     ./utils
   ];
