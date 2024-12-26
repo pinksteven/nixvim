@@ -88,7 +88,7 @@
         };
       };
     };
-    flake = lib.mkOption {
+    nixos-flake = lib.mkOption {
       default = "~/.config/nixos/flake.nix";
       type = lib.types.nonEmptyStr;
     };
