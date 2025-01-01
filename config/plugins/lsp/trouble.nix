@@ -3,8 +3,6 @@
     trouble = {
       enable = true;
 
-      lazyLoad.settings.cmd = "Trouble";
-
       settings = {
         auto_close = true;
         modes = {
@@ -48,7 +46,7 @@
         __unkeyed = "<leader>x";
         mode = "n";
         icon = "";
-        group = "Trouble";
+        group = "trouble";
       }
     ];
   };
