@@ -4,5 +4,6 @@
     ./fidget.nix
     ./lsp.nix
     ./lspsaga.nix
+    ./trouble.nix
   ];
 }
