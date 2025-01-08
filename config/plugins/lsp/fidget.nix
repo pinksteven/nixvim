@@ -1,3 +1,4 @@
+{ lib, ... }:
 {
   plugins.fidget = {
     enable = true;
@@ -70,7 +71,7 @@
         end
       '';
       configs = {
-        default = "require('fidget.notification').default_config";
+        default = lib.nixvim.mkRaw "require('fidget.notification').default_config";
       };
 
       window = {
