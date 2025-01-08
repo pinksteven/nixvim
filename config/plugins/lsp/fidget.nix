@@ -3,7 +3,7 @@
     enable = true;
     logger = {
       level = "warn"; # “off”, “error”, “warn”, “info”, “debug”, “trace”
-      floatPrecision = 0.01; # Limit the number of decimals displayed for floats
+      float_precision = 0.01; # Limit the number of decimals displayed for floats
     };
     progress = {
       poll_rate = 0; # How and when to poll for progress messages
@@ -30,7 +30,7 @@
         done_ttl = 3; # How long a message should persist after completion
         done_icon = "✔"; # Icon shown when all LSP progress tasks are complete
         done_style = "Constant"; # Highlight group for completed LSP tasks
-        progress_ttl = "math.huge"; # How long a message should persist when in progress
+        progress_ttl.__raw = "math.huge"; # How long a message should persist when in progress
         progress_icon = {
           pattern = "dots";
           period = 1;
