@@ -9,7 +9,7 @@
     ./whichkey.nix
     ./undotree.nix
     ./startup.nix
-    ./snacks.nix
+    ./toggleterm.nix
   ];
 
   plugins = {
