@@ -11,9 +11,6 @@
 
     overseer = {
       enable = true;
-      settings = {
-        strategy = "toggleterm";
-      };
     };
   };
 
