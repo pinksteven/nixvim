@@ -1,4 +1,7 @@
-{ colors, ... }:
+{ config, ... }:
+let
+  colors = config.theme.colors;
+in
 {
   plugins.startup = {
     enable = true;
