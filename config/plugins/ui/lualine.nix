@@ -1,4 +1,7 @@
-{ colors, icons, ... }:
+{ config, icons, ... }:
+let
+  colors = config.theme.colors;
+in
 {
   plugins.lualine = {
     enable = true;
