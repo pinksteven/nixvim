@@ -5,5 +5,6 @@
     ./yuck.nix
     ./css.nix
     ./xml.nix
+    ./rust.nix
   ];
 }
