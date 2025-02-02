@@ -2,7 +2,8 @@
   plugins.toggleterm = {
     enable = true;
     settings = {
-      open_mapping = "[[<C-q>]]";
+      # open_mapping = "[[<C-q>]]";
+      direction = "float";
     };
   };
 
@@ -11,7 +12,7 @@
       mode = "t";
       key = "<C-q>";
       action = "<cmd>ToggleTerm<cr>";
-      options.desc = "Open/Close Terminal 2";
+      options.desc = "Open/Close Terminal";
     }
     {
       mode = "n";
