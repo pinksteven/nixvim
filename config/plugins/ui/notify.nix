@@ -2,8 +2,10 @@
   # Used as noice as a notification backend
   plugins.notify = {
     enable = true;
-    stages = "slide";
-    timeout = 3000;
+    settings = {
+      stages = "slide";
+      timeout = 3000;
+    };
   };
 
   keymaps = [
