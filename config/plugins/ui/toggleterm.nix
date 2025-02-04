@@ -2,15 +2,18 @@
   plugins.toggleterm = {
     enable = true;
     settings = {
-      # open_mapping = "[[<C-q>]]";
       direction = "float";
+      float_opts = {
+        border = "curved";
+        winblend = 4;
+      };
     };
   };
 
   keymaps = [
     {
       mode = "t";
-      key = "<C-q>";
+      key = "<C-x>";
       action = "<cmd>ToggleTerm<cr>";
       options.desc = "Open/Close Terminal";
     }
