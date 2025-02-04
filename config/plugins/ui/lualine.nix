@@ -10,15 +10,12 @@ in
         always_divide_middle = true;
         ignore_focus = [
           "neo-tree"
-          "toggleterm"
         ];
         globalstatus = true; # global status line instead of separate for every window
         disabled_filetypes.statusline = [
           "dashboard"
           "startup"
           "alpha"
-          "ministarter"
-          "snacks_dashboard"
         ];
         section_separators = {
           left = "";

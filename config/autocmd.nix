@@ -60,23 +60,32 @@
         '';
       };
     }
-    # Reload neo-tree when leaving lazygit
+    # Reload neo-tree when leaving any terminal job
     {
-      event = "BufLeave";
-      pattern = "*lazygit*";
+      event = "TermLeave";
       callback.__raw = ''
         function()
           require("neo-tree.sources.filesystem.commands").refresh(
-        		require("neo-tree.sources.manager").get_state("filesystem")
-        	)
+            require("neo-tree.sources.manager").get_state("filesystem")
+          )
         end
       '';
     }
-    # Tile neovim on entering
+    # Don't show bufferline in startup
+    {
+      event = "FileType";
+      pattern = [ "startup" ];
+      command = "set showtabline=0";
+    }
+    # Tile neovim on entering and float on exit
     {
       event = "UIEnter";
       command = ''silent !hyprctl dispatch settiled --quiet'';
       once = true;
+    }
+    {
+      event = "VimLeavePre";
+      command = ''silent !hyprctl dispatch setfloating --quiet'';
     }
   ];
 }
