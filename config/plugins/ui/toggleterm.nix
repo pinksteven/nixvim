@@ -5,7 +5,6 @@
       direction = "float";
       float_opts = {
         border = "curved";
-        winblend = 4;
       };
     };
   };
