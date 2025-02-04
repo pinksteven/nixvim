@@ -1,3 +1,4 @@
+{ config, lib, ... }:
 {
   plugins.toggleterm = {
     enable = true;
@@ -5,6 +6,7 @@
       direction = "float";
       float_opts = {
         border = "curved";
+        winblend = lib.mkIf (!config.theme.transparency.main) 3;
       };
     };
   };

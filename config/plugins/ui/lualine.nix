@@ -18,8 +18,8 @@ in
           "alpha"
         ];
         section_separators = {
-          left = "";
-          right = "";
+          left = "";
+          right = "";
         };
         component_separators = {
           left = "";

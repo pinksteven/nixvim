@@ -22,14 +22,48 @@ in
             bg = colors.base00;
           };
 
-          error = {
-            fg = colors.base08;
-            bg = colors.base00;
-          };
-          error_diagnostic = {
-            fg = colors.base08;
-            bg = colors.base00;
-          };
+          error.bg = colors.base00;
+          error_diagnostic.bg = colors.base00;
+          error_visible.bg = colors.base00;
+          error_diagnostic_visible.bg = colors.base00;
+          error_selected.bg = colors.base00;
+          error_diagnostic_selected.bg = colors.base00;
+
+          info.bg = colors.base00;
+          info_diagnostic.bg = colors.base00;
+          info_visible.bg = colors.base00;
+          info_diagnostic_visible.bg = colors.base00;
+          info_selected.bg = colors.base00;
+          info_diagnostic_selected.bg = colors.base00;
+
+          warning.bg = colors.base00;
+          warning_diagnostic.bg = colors.base00;
+          warning_visible.bg = colors.base00;
+          warning_diagnostic_visible.bg = colors.base00;
+          warning_selected.bg = colors.base00;
+          warning_diagnostic_selected.bg = colors.base00;
+
+          hint.bg = colors.base00;
+          hint_diagnostic.bg = colors.base00;
+          hint_visible.bg = colors.base00;
+          hint_diagnostic_visible.bg = colors.base00;
+          hint_selected.bg = colors.base00;
+          hint_diagnostic_selected.bg = colors.base00;
+
+          modified.bg = colors.base00;
+          modified_visible.bg = colors.base00;
+          modified_selected.bg = colors.base00;
+
+          numbers.bg = colors.base00;
+          numbers_visible.bg = colors.base00;
+          numbers_selected.bg = colors.base00;
+
+          duplicate.bg = colors.base00;
+          duplicate_visible.bg = colors.base00;
+          duplicate_selected.bg = colors.base00;
+
+          indicator_selected.bg = colors.base00;
+          indicator_visible.bg = colors.base00;
 
           close_button = {
             fg = colors.base03;
