@@ -6,7 +6,7 @@
       direction = "float";
       float_opts = {
         border = "curved";
-        winblend = lib.mkIf (!config.theme.transparency.main) 3;
+        winblend = lib.mkIf (!config.theme.transparency.main) 1;
       };
     };
   };
