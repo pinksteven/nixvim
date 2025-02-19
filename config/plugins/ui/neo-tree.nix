@@ -20,6 +20,7 @@
       bindToCwd = false;
       useLibuvFileWatcher = true;
       followCurrentFile.enabled = true;
+      filteredItems.visible = true;
     };
 
     window = {

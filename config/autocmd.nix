@@ -78,14 +78,14 @@
       command = "set showtabline=0";
     }
     # Tile neovim on entering and float on exit
-    {
-      event = "UIEnter";
-      command = ''silent !hyprctl dispatch settiled --quiet'';
-      once = true;
-    }
-    {
-      event = "VimLeavePre";
-      command = ''silent !hyprctl dispatch setfloating --quiet'';
-    }
+    # {
+    #   event = "UIEnter";
+    #   command = ''silent !hyprctl dispatch settiled --quiet'';
+    #   once = true;
+    # }
+    # {
+    #   event = "VimLeavePre";
+    #   command = ''silent !hyprctl dispatch setfloating --quiet'';
+    # }
   ];
 }
