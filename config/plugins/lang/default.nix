@@ -5,5 +5,6 @@
     ./css.nix
     ./xml.nix
     ./rust.nix
+    ./qml.nix
   ];
 }
