@@ -6,5 +6,6 @@
     ./xml.nix
     ./rust.nix
     ./qml.nix
+    ./python.nix
   ];
 }
