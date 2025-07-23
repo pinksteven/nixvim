@@ -155,7 +155,7 @@
         ''; # LazyVim uses its own function but this should do the exact same thing
       foldtext = "";
       foldlevel = 99; # Folds with a level higher than this number will be closed
-      foldlevelstart = -1;
+      # foldlevelstart = -1;
       foldenable = true;
       foldcolumn = "1";
       fillchars = {

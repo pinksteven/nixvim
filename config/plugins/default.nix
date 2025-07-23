@@ -7,7 +7,6 @@
     ./lang
     ./lsp
     ./telescope
-    ./theme
     ./treesitter
     ./ui
     ./utils

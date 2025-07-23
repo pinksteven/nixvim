@@ -108,5 +108,14 @@
         end
       '';
     };
+
+    ToggleWrap = {
+      command.__raw = ''
+        function ToggleWrap()
+          vim.wo.wrap = not vim.wo.wrap
+        end
+      '';
+      desc = "Toggle line wrapping";
+    };
   };
 }

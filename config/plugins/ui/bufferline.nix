@@ -1,104 +1,100 @@
-{ config, ... }:
-let
-  colors = config.theme.colors;
-in
 {
   plugins = {
     bufferline = {
       enable = true;
       settings = {
-        highlights = {
-          background = {
-            bg = colors.base00;
-            fg = colors.base03;
-          };
-
-          buffer_selected = {
-            bg = colors.base00;
-            fg = colors.base05;
-          };
-          buffer_visible = {
-            fg = colors.base05;
-            bg = colors.base00;
-          };
-
-          error.bg = colors.base00;
-          error_diagnostic.bg = colors.base00;
-          error_visible.bg = colors.base00;
-          error_diagnostic_visible.bg = colors.base00;
-          error_selected.bg = colors.base00;
-          error_diagnostic_selected.bg = colors.base00;
-
-          info.bg = colors.base00;
-          info_diagnostic.bg = colors.base00;
-          info_visible.bg = colors.base00;
-          info_diagnostic_visible.bg = colors.base00;
-          info_selected.bg = colors.base00;
-          info_diagnostic_selected.bg = colors.base00;
-
-          warning.bg = colors.base00;
-          warning_diagnostic.bg = colors.base00;
-          warning_visible.bg = colors.base00;
-          warning_diagnostic_visible.bg = colors.base00;
-          warning_selected.bg = colors.base00;
-          warning_diagnostic_selected.bg = colors.base00;
-
-          hint.bg = colors.base00;
-          hint_diagnostic.bg = colors.base00;
-          hint_visible.bg = colors.base00;
-          hint_diagnostic_visible.bg = colors.base00;
-          hint_selected.bg = colors.base00;
-          hint_diagnostic_selected.bg = colors.base00;
-
-          modified.bg = colors.base00;
-          modified_visible.bg = colors.base00;
-          modified_selected.bg = colors.base00;
-
-          numbers.bg = colors.base00;
-          numbers_visible.bg = colors.base00;
-          numbers_selected.bg = colors.base00;
-
-          duplicate.bg = colors.base00;
-          duplicate_visible.bg = colors.base00;
-          duplicate_selected.bg = colors.base00;
-
-          indicator_selected.bg = colors.base00;
-          indicator_visible.bg = colors.base00;
-
-          close_button = {
-            fg = colors.base03;
-            bg = colors.base00;
-          };
-          close_button_visible = {
-            fg = colors.base05;
-            bg = colors.base00;
-          };
-          close_button_selected = {
-            fg = colors.base05;
-            bg = colors.base00;
-          };
-          fill = {
-            bg = colors.base00;
-            fg = colors.base05;
-          };
-          trunc_marker = {
-            fg = colors.base04;
-            bg = colors.base00;
-          };
-
-          separator = {
-            bg = colors.base00;
-            fg = colors.base00;
-          };
-          separator_visible = {
-            bg = colors.base00;
-            fg = colors.base00;
-          };
-          separator_selected = {
-            bg = colors.base00;
-            fg = colors.base00;
-          };
-        };
+        # highlights = {
+        #   background = {
+        #     bg = colors.base00;
+        #     fg = colors.base03;
+        #   };
+        #
+        #   buffer_selected = {
+        #     bg = colors.base00;
+        #     fg = colors.base05;
+        #   };
+        #   buffer_visible = {
+        #     fg = colors.base05;
+        #     bg = colors.base00;
+        #   };
+        #
+        #   error.bg = colors.base00;
+        #   error_diagnostic.bg = colors.base00;
+        #   error_visible.bg = colors.base00;
+        #   error_diagnostic_visible.bg = colors.base00;
+        #   error_selected.bg = colors.base00;
+        #   error_diagnostic_selected.bg = colors.base00;
+        #
+        #   info.bg = colors.base00;
+        #   info_diagnostic.bg = colors.base00;
+        #   info_visible.bg = colors.base00;
+        #   info_diagnostic_visible.bg = colors.base00;
+        #   info_selected.bg = colors.base00;
+        #   info_diagnostic_selected.bg = colors.base00;
+        #
+        #   warning.bg = colors.base00;
+        #   warning_diagnostic.bg = colors.base00;
+        #   warning_visible.bg = colors.base00;
+        #   warning_diagnostic_visible.bg = colors.base00;
+        #   warning_selected.bg = colors.base00;
+        #   warning_diagnostic_selected.bg = colors.base00;
+        #
+        #   hint.bg = colors.base00;
+        #   hint_diagnostic.bg = colors.base00;
+        #   hint_visible.bg = colors.base00;
+        #   hint_diagnostic_visible.bg = colors.base00;
+        #   hint_selected.bg = colors.base00;
+        #   hint_diagnostic_selected.bg = colors.base00;
+        #
+        #   modified.bg = colors.base00;
+        #   modified_visible.bg = colors.base00;
+        #   modified_selected.bg = colors.base00;
+        #
+        #   numbers.bg = colors.base00;
+        #   numbers_visible.bg = colors.base00;
+        #   numbers_selected.bg = colors.base00;
+        #
+        #   duplicate.bg = colors.base00;
+        #   duplicate_visible.bg = colors.base00;
+        #   duplicate_selected.bg = colors.base00;
+        #
+        #   indicator_selected.bg = colors.base00;
+        #   indicator_visible.bg = colors.base00;
+        #
+        #   close_button = {
+        #     fg = colors.base03;
+        #     bg = colors.base00;
+        #   };
+        #   close_button_visible = {
+        #     fg = colors.base05;
+        #     bg = colors.base00;
+        #   };
+        #   close_button_selected = {
+        #     fg = colors.base05;
+        #     bg = colors.base00;
+        #   };
+        #   fill = {
+        #     bg = colors.base00;
+        #     fg = colors.base05;
+        #   };
+        #   trunc_marker = {
+        #     fg = colors.base04;
+        #     bg = colors.base00;
+        #   };
+        #
+        #   separator = {
+        #     bg = colors.base00;
+        #     fg = colors.base00;
+        #   };
+        #   separator_visible = {
+        #     bg = colors.base00;
+        #     fg = colors.base00;
+        #   };
+        #   separator_selected = {
+        #     bg = colors.base00;
+        #     fg = colors.base00;
+        #   };
+        # };
 
         options = {
           indicator_icon = null;
@@ -141,12 +137,12 @@ in
     };
   };
 
-  highlight."TabLineSel" = {
-    fg = colors.base0D;
-    bg = colors.base0D;
-    sp = colors.base0D;
-    bold = true;
-  };
+  # highlight."TabLineSel" = {
+  #   fg = colors.base0D;
+  #   bg = colors.base0D;
+  #   sp = colors.base0D;
+  #   bold = true;
+  # };
 
   keymaps = [
     {

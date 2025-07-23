@@ -1,12 +1,8 @@
-{ config, ... }:
-let
-  colors = config.theme.colors;
-in
 {
   plugins.startup = {
     enable = true;
 
-    colors.background = colors.base00;
+    # colors.background = colors.base00;
 
     sections = {
       header = {
@@ -37,7 +33,7 @@ in
           "    ░░░░░░╚═╝░░░╚═╝╚═╝░░░░░╚═╝╚══════╝░░░    "
         ];
         highlight = "";
-        defaultColor = colors.base0D;
+        # defaultColor = colors.base0D;
         oldfilesAmount = 0;
       };
       body = {
@@ -91,7 +87,7 @@ in
           ]
         ];
         highlight = "";
-        defaultColor = colors.base0E;
+        # defaultColor = colors.base0E;
         oldfilesAmount = 0;
       };
     };

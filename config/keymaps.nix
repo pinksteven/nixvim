@@ -2,65 +2,6 @@
   globals.mapleader = " ";
 
   keymaps = [
-    # Windows
-    {
-      mode = "n";
-      key = "<C-Up>";
-      action = "<C-w>k";
-      options.desc = "Move To Window Up";
-    }
-
-    {
-      mode = "n";
-      key = "<C-Down>";
-      action = "<C-w>j";
-      options.desc = "Move To Window Down";
-    }
-
-    {
-      mode = "n";
-      key = "<C-Left>";
-      action = "<C-w>h";
-      options.desc = "Move To Window Left";
-    }
-
-    {
-      mode = "n";
-      key = "<C-Right>";
-      action = "<C-w>l";
-      options.desc = "Move To Window Right";
-    }
-
-    {
-      mode = "n";
-      key = "<leader>wd";
-      action = "<C-W>c";
-      options = {
-        silent = true;
-        desc = "Delete window";
-      };
-    }
-
-    {
-      mode = "n";
-      key = "<leader>w-";
-      action = "<C-W>s";
-      options = {
-        silent = true;
-        desc = "Split window below";
-      };
-    }
-
-    {
-      mode = "n";
-      key = "<leader>w|";
-      action = "<C-W>v";
-      options = {
-        silent = true;
-        desc = "Split window right";
-      };
-    }
-
     {
       mode = [
         "n"
@@ -83,27 +24,6 @@
       options = {
         silent = true;
         desc = "Quit all";
-      };
-    }
-
-    # Toggle options
-    {
-      mode = "n";
-      key = "<leader>ul";
-      action = ":lua ToggleLineNumber()<cr>";
-      options = {
-        silent = true;
-        desc = "Toggle Line Numbers";
-      };
-    }
-
-    {
-      mode = "n";
-      key = "<leader>uL";
-      action = ":lua ToggleRelativeLineNumber()<cr>";
-      options = {
-        silent = true;
-        desc = "Toggle Relative Line Numbers";
       };
     }
 
@@ -211,32 +131,11 @@
     }
   ];
   extraConfigLua = ''
-    function ToggleLineNumber()
-    if vim.wo.number then
-      vim.wo.number = false
-    else
-      vim.wo.number = true
-      vim.wo.relativenumber = false
-      end
-    end
 
-    function ToggleRelativeLineNumber()
-    if vim.wo.relativenumber then
-      vim.wo.relativenumber = false
-    else
-      vim.wo.relativenumber = true
-      vim.wo.number = false
-      end
+    if vim.lsp.inlay_hint then
+      vim.keymap.set('n', '<leader>uh', function()
+        vim.lsp.inlay_hint(0, nil)
+      end, { desc = 'Toggle Inlay Hints' })
     end
-
-    function ToggleWrap()
-        vim.wo.wrap = not vim.wo.wrap
-    end
-
-     if vim.lsp.inlay_hint then
-       vim.keymap.set('n', '<leader>uh', function()
-         vim.lsp.inlay_hint(0, nil)
-       end, { desc = 'Toggle Inlay Hints' })
-     end
   '';
 }

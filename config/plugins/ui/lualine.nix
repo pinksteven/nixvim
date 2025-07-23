@@ -1,7 +1,3 @@
-{ config, icons, ... }:
-let
-  colors = config.theme.colors;
-in
 {
   plugins.lualine = {
     enable = true;
@@ -40,10 +36,10 @@ in
         lualine_c = [
           {
             __unkeyed = "filename";
-            symbols = {
-              modified = icons.git.LineAdded;
-              readonly = icons.git.FileIgnored;
-            };
+            # symbols = {
+            #   modified = icons.git.LineAdded;
+            #   readonly = icons.git.FileIgnored;
+            # };
           }
           "diff"
         ];
@@ -51,12 +47,12 @@ in
         lualine_x = [
           {
             __unkeyed = "diagnostics";
-            symbols = {
-              error = icons.diagnostics.Error;
-              warn = icons.diagnostics.Warning;
-              hint = icons.diagnostics.Hint;
-              info = icons.diagnostics.BoldInformation;
-            };
+            # symbols = {
+            #   error = icons.diagnostics.Error;
+            #   warn = icons.diagnostics.Warning;
+            #   hint = icons.diagnostics.Hint;
+            #   info = icons.diagnostics.BoldInformation;
+            # };
           }
 
           # Show active language server
@@ -78,7 +74,7 @@ in
                   return msg
               end
             '';
-            icon = icons.ui.Settings;
+            # icon = icons.ui.Settings;
           }
           "encoding"
           "fileformat"
@@ -97,28 +93,28 @@ in
       };
     };
   };
-  extraConfigLua = ''
-    local customTheme = {
-      normal = {
-        a = { fg = "${colors.base00}", bg = "${colors.base0D}"},
-        b = { fg = "${colors.base05}", bg = "${colors.base01}"},
-        c = { fg = "${colors.base04}"},
-      },
-
-      insert = { a = { fg = "${colors.base00}", bg = "${colors.base0B}"}},
-      visual = { a = { fg = "${colors.base00}", bg = "${colors.base0A}"}},
-      replace = { a = { fg = "${colors.base00}", bg = "${colors.base09}"}},
-
-      inactive = {
-        a = { fg = "${colors.base05}", bg = "${colors.base00}" },
-        b = { fg = "${colors.base05}", bg = "${colors.base00}" },
-        c = { fg = "${colors.base05}" },
-      },
-    }
-    require("lualine").setup({
-      options = {
-        theme = customTheme,
-      },
-      })
-  '';
+  # extraConfigLua = ''
+  #   local customTheme = {
+  #     normal = {
+  #       a = { fg = "${colors.base00}", bg = "${colors.base0D}"},
+  #       b = { fg = "${colors.base05}", bg = "${colors.base01}"},
+  #       c = { fg = "${colors.base04}"},
+  #     },
+  #
+  #     insert = { a = { fg = "${colors.base00}", bg = "${colors.base0B}"}},
+  #     visual = { a = { fg = "${colors.base00}", bg = "${colors.base0A}"}},
+  #     replace = { a = { fg = "${colors.base00}", bg = "${colors.base09}"}},
+  #
+  #     inactive = {
+  #       a = { fg = "${colors.base05}", bg = "${colors.base00}" },
+  #       b = { fg = "${colors.base05}", bg = "${colors.base00}" },
+  #       c = { fg = "${colors.base05}" },
+  #     },
+  #   }
+  #   require("lualine").setup({
+  #     options = {
+  #       theme = customTheme,
+  #     },
+  #     })
+  # '';
 }

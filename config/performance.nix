@@ -10,11 +10,11 @@
       plugins = true;
     };
     combinePlugins = {
-      enable = true;
+      enable = false; # It breaks for me i'll debug someday maybe
       standalonePlugins = with pkgs.vimPlugins; [
-        "firenvim"
-        "neotest"
-        "nvim-treesitter"
+        firenvim
+        neotest
+        nvim-treesitter
         mini-nvim
         overseer-nvim
         vs-tasks-nvim
