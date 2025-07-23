@@ -1,8 +1,4 @@
-{ mkPkgs, inputs, ... }:
 {
-  extraPlugins = [
-    (mkPkgs "NormalSnippets" inputs.normal_snippets)
-  ];
 
   plugins = {
     compiler = {
