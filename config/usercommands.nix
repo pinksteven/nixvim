@@ -111,7 +111,7 @@
 
     ToggleWrap = {
       command.__raw = ''
-        function ToggleWrap()
+        function()
           vim.wo.wrap = not vim.wo.wrap
         end
       '';

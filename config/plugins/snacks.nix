@@ -10,6 +10,7 @@
         scope.enabled = true;
         words.enabled = true;
         bufdelete.enabled = true;
+        statuscolumn.enabled = true;
         lazygit = {
           enabled = true;
           win.border = "rounded";

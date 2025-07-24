@@ -1,12 +1,25 @@
+{ lib, ... }:
+let
+  inherit (builtins) readDir;
+  inherit (lib.attrsets) foldlAttrs;
+  inherit (lib.lists) optional;
+  by-name = ./.;
+in
 {
   globals.mapleader = " ";
 
   plugins.mini = {
-    enabled = true;
+    enable = true;
     modules.bracketed.enable = true;
   };
 
-  imports = [
-    ./windows.nix
-  ];
+  imports = (
+    foldlAttrs (
+      prev: name: type:
+      prev
+      ++ optional (
+        type == "regular" && builtins.match ".*\\.nix$" name != null && name != "default.nix"
+      ) (by-name + "/${name}")
+    ) [ ] (readDir by-name)
+  );
 }

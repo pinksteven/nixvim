@@ -1,8 +1,21 @@
 {
+  plugins.ts-context-commentstring.enable = true;
   plugins.mini = {
     enable = true;
     modules = {
-      bracketed = { };
+      pairs = {
+        modes = {
+          insert = true;
+          command = true;
+          terminal = false;
+        };
+        skip_next = ''[=[[%w%%%'%[%"%.%`%$]]=]'';
+        skip_ts = [ "string" ];
+        skip_unbalanced = true;
+        markdown = true;
+      };
+      cursorword = { };
+      git = { };
       comment = {
         options = {
           customCommentString = ''
@@ -14,10 +27,8 @@
           comment_line = "<leader>/";
           comment_visual = "<leader>/";
           textobject = "<leader>/";
-
         };
       };
     };
   };
-  plugins.ts-context-commentstring.enable = true;
 }

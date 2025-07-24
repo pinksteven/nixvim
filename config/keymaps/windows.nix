@@ -1,6 +1,6 @@
 { lib, ... }:
 {
-  keymaps = lib.mkMerge [
+  keymaps = [
     {
       mode = "n";
       key = "<C-k>";
