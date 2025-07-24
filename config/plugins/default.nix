@@ -15,4 +15,7 @@ in
       ) (by-name + "/${name}")
     ) [ ] (readDir by-name)
   );
+
+  # So much shit depends on this i might as well keep it here
+  plugins.web-devicons.enable = true;
 }
