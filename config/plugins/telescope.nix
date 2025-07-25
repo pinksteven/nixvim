@@ -1,13 +1,14 @@
 { pkgs, ... }:
 {
   plugins = {
-    project-nvim.enableTelescope = true;
     telescope = {
       enable = true;
       extensions = {
         fzf-native.enable = true;
         undo.enable = true;
+        zoxide.enable = true;
         ui-select = {
+          enable = true;
           settings = {
             specific_opts = {
               codeactions = true;

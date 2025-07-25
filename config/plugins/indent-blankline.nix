@@ -28,6 +28,7 @@
             "gitcommit"
             "TelescopePrompt"
             "TelescopeResults"
+            "startup"
             "''"
           ];
         };

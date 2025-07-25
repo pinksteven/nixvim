@@ -67,7 +67,7 @@ in
           ]
           [
             "󰈚  Recent Files"
-            "require('telescope.builtin').oldfiles"
+            "lua require('telescope.builtin').oldfiles"
             "r"
           ]
           [

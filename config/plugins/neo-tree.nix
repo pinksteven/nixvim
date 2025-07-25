@@ -2,6 +2,9 @@
   plugins.neo-tree = {
     enable = true;
     closeIfLastWindow = true;
+    autoCleanAfterSessionRestore = true;
+    hideRootNode = true;
+    retainHiddenRootIndent = true;
     sources = [
       "filesystem"
       "buffers"
@@ -14,13 +17,15 @@
       "qf"
       "Outline"
     ];
-    popupBorderStyle = "rounded"; # “NC”, “double”, “none”, “rounded”, “shadow”, “single”, “solid” or raw lua code
+    popupBorderStyle = "rounded";
 
     filesystem = {
+      asyncDirectoryScan = "auto";
       bindToCwd = false;
       useLibuvFileWatcher = true;
       followCurrentFile.enabled = true;
       filteredItems.visible = true;
+
     };
 
     window = {
