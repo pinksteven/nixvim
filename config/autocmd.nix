@@ -12,13 +12,11 @@
       group = "highlight_yank";
       event = "TextYankPost";
       pattern = "*";
-      callback = {
-        __raw = "
+      callback.__raw = "
         function()
           vim.highlight.on_yank()
         end
       ";
-      };
     }
     {
       group = "indentscope";
@@ -32,13 +30,11 @@
         "trouble"
         "notify"
       ];
-      callback = {
-        __raw = ''
-          function()
-            vim.b.miniindentscope_disable = true
-          end
-        '';
-      };
+      callback.__raw = ''
+        function()
+          vim.b.miniindentscope_disable = true
+        end
+      '';
     }
     # from NVChad https://nvchad.com/docs/recipes (this autocmd will restore the cursor position when opening a file)
     {
@@ -75,7 +71,12 @@
     {
       event = "FileType";
       pattern = [ "startup" ];
-      command = "set showtabline=0";
+      callback.__raw = ''
+        function()
+          vim.opt_local.spell = false
+          vim.opt_local.showtabline = 0
+        end
+      '';
     }
   ];
 }

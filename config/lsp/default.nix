@@ -15,5 +15,6 @@ in
       ./conform.nix
       ./lsp.nix
       ./lspsaga.nix
+      ./lspkind.nix
     ];
 }
