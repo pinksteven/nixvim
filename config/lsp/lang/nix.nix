@@ -1,7 +1,10 @@
-{ pkgs, config, ... }:
-let
-  flake = config.flake;
-in
+{
+  pkgs,
+  lib,
+  config,
+  self,
+  ...
+}:
 {
   plugins = {
     nix.enable = true;
@@ -10,42 +13,49 @@ in
 
     conform-nvim.settings = {
       formatters_by_ft = {
-        nix = [ "nixfmt-rfc-style" ];
+        nix = [ "alejandra" ];
       };
 
       formatters = {
-        nixfmt-rfc-style = {
-          command = "${pkgs.nixfmt-rfc-style}/bin/nixfmt";
-        };
+        alejandra.command = lib.getExe pkgs.alejandra;
       };
     };
 
     lint = {
       lintersByFt = {
-        nix = [ "statix" ];
+        nix = [
+          "deadnix"
+        ]
+        ++ lib.optionals (!config.plugins.lsp.servers.statix.enable) [ "statix" ];
       };
 
       linters = {
-        statix = {
-          cmd = "${pkgs.statix}/bin/statix";
-        };
+        deadnix.cmd = lib.getExe pkgs.deadnix;
+        statix.cmd = lib.getExe pkgs.statix;
       };
     };
 
+    # Config from khanelivim
     lsp.servers.nixd = {
       enable = true;
-      settings = {
-        nixpkgs.expr = ''import (builtins.getFlake "${flake}").inputs.nixpkgs { }'';
-        options = {
-          nixos.expr = ''(builtins.getFlake "${flake}").nixosConfigurations.alfhiem.options'';
-          home_manager.expr = ''(builtins.getFlake "${flake}").nixosConfigurations.alfhiem.options'';
+      settings.settings =
+        let
+          flake = ''(builtins.getFlake "${self}")'';
+          system = ''''${builtins.currentSystem}'';
+        in
+        {
+          nixpkgs.expr = "import ${flake}.inputs.nixpkgs { }";
+          formatting = {
+            command = [ "${lib.getExe pkgs.alejandra}" ];
+          };
+          options = {
+            nixvim.expr = ''${flake}.packages.${system}.nvim.options'';
+            # NOTE: These will be passed in from outside using `.extend` from the flake installing this package
+            # nix-darwin.expr = ''${flake}.darwinConfigurations.khanelimac.options'';
+            # nixos.expr = ''${flake}.nixosConfigurations.khanelinix.options'';
+            # home-manager.expr = ''${nixos.expr}.home-manager.users.type.getSubOptions [ ]'';
+          };
         };
-        flake_parts.expr = ''let flake = builtins.getFlake ("${flake}"); in flake.debug.options // flake.currentSystem.options'';
-      };
     };
   };
-
-  extraConfigVim = ''
-    au BufRead,BufNewFile flake.lock setf json
-  '';
 }

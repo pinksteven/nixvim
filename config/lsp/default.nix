@@ -9,7 +9,10 @@ in
   imports =
     (foldlAttrs (
       prev: name: type:
-      prev ++ optional (type == "directory") (by-name + "/${name}")
+      prev
+      ++ optional (
+        type == "regular" && builtins.match ".*\\.nix$" name != null && name != "default.nix"
+      ) (by-name + "/${name}")
     ) [ ] (readDir by-name))
     ++ [
       ./conform.nix

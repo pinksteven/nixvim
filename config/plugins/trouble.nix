@@ -13,7 +13,7 @@
             preview = {
               type = "split";
               relative = "win";
-              position = "right";
+              position = "left";
               size = 0.5;
             };
           };
