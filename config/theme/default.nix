@@ -6,7 +6,7 @@
     enable = true;
     modules.base16 = {
       enable = true;
-      palette = {
+      palette = lib.mkDefault {
         base00 = "#282c34";
         base01 = "#353b45";
         base02 = "#3e4451";
