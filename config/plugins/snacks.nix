@@ -11,6 +11,7 @@
         words.enabled = true;
         bufdelete.enabled = true;
         statuscolumn.enabled = true;
+        toggle.enabled = true;
         lazygit = {
           enabled = true;
           win.border = "rounded";
@@ -35,6 +36,12 @@
       options = {
         desc = "Open lazygit";
       };
+    }
+    {
+      mode = "n";
+      key = "<leader>uh";
+      action = "<cmd>lua Snacks.toggle.inlay_hints()<CR>";
+      options.desc = "Toggle inlay hints";
     }
   ];
 }

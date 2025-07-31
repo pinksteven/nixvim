@@ -4,14 +4,6 @@
 
     lsp = {
       enable = true;
-      servers.typos_lsp = {
-        enable = true;
-        settings = {
-          init_options = {
-            diagnosticSeverity = "Hint";
-          };
-        };
-      };
       keymaps.lspBuf = {
         "<c-k>" = "signature_help";
         "gi" = "implementation";

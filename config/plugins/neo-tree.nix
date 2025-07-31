@@ -16,6 +16,7 @@
       "trouble"
       "qf"
       "Outline"
+      "edgy"
     ];
     popupBorderStyle = "rounded";
 
@@ -44,16 +45,4 @@
       };
     };
   };
-
-  keymaps = [
-    {
-      mode = "n";
-      key = "<leader>e";
-      action = "<cmd>Neotree action=focus reveal toggle<cr>";
-      options = {
-        silent = true;
-        desc = "Toggle NeoTree";
-      };
-    }
-  ];
 }
