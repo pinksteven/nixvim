@@ -1,5 +1,9 @@
-{ lib, pkgs, ... }:
 {
+  lib,
+  pkgs,
+  ...
+}: {
+  lsp.servers.pyright.enable = true;
   plugins = {
     conform-nvim.settings = {
       formatters_by_ft = {
@@ -18,6 +22,5 @@
       };
     };
     dap-python.enable = true;
-    lsp.servers.pyright.enable = true;
   };
 }

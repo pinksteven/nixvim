@@ -26,7 +26,6 @@
       useLibuvFileWatcher = true;
       followCurrentFile.enabled = true;
       filteredItems.visible = true;
-
     };
 
     window = {
@@ -45,4 +44,13 @@
       };
     };
   };
+
+  keymaps = [
+    {
+      mode = "n";
+      key = "<leader>e";
+      action = "<cmd>Neotree<CR>";
+      options.desc = "Open neotree";
+    }
+  ];
 }

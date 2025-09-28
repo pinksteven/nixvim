@@ -1,5 +1,5 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
+  lsp.servers.qmlls.enable = true;
   plugins = {
     # conform-nvim.settings = {
     #   formatters = {
@@ -15,9 +15,5 @@
     #
     #   formatters_by_ft.qml = [ "qmlformat" ];
     # };
-
-    lsp.servers.qmlls = {
-      enable = true;
-    };
   };
 }

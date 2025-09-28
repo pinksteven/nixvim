@@ -9,7 +9,7 @@
         "i"
       ];
       key = "<C-s>";
-      action = "<cmd>w<cr><esc>";
+      action = "<esc><cmd>w<cr>";
       options = {
         silent = true;
         desc = "Save file";

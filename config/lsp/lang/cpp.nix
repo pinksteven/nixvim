@@ -1,22 +1,9 @@
-{ pkgs, ... }:
-{
-  plugins = {
-    conform-nvim.settings = {
-      formatters_by_ft = {
-        cpp = [ "clang-format" ];
-      };
-
-      formatters = {
-        clang-format = {
-          command = "${pkgs.clang-tools}/bin/clang-format";
-        };
-      };
-    };
-
-    lsp.servers = {
-      cmake.enable = true;
-      clangd = {
-        enable = true;
+{pkgs, ...}: {
+  lsp.servers = {
+    cmake.enable = true;
+    clangd = {
+      enable = true;
+      settings = {
         cmd = [
           "clangd"
           "--offset-encoding=utf-16"
@@ -35,12 +22,24 @@
           require("clangd_extensions.inlay_hints").setup_autocmd()
           require("clangd_extensions.inlay_hints").set_inlay_hints()
         '';
-        extraOptions = {
-          init_options = {
-            usePlaceholders = true;
-            completeUnimported = true;
-            clangdFileStatus = true;
-          };
+        init_options = {
+          usePlaceholders = true;
+          completeUnimported = true;
+          clangdFileStatus = true;
+        };
+      };
+    };
+  };
+
+  plugins = {
+    conform-nvim.settings = {
+      formatters_by_ft = {
+        cpp = ["clang-format"];
+      };
+
+      formatters = {
+        clang-format = {
+          command = "${pkgs.clang-tools}/bin/clang-format";
         };
       };
     };

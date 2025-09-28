@@ -2,12 +2,8 @@
   plugins = {
     lsp-signature.enable = true;
 
-    lsp = {
+    lspconfig = {
       enable = true;
-      keymaps.lspBuf = {
-        "<c-k>" = "signature_help";
-        "gi" = "implementation";
-      };
     };
     lint.enable = true;
   };
